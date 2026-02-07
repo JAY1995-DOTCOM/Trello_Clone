@@ -1,5 +1,8 @@
 # Trello Clone – Rapid Prototype
 
+<img width="1915" height="994" alt="Screenshot 2026-02-07 121653" src="https://github.com/user-attachments/assets/7df46428-61df-47a6-b9a3-f42e1c28602d" />
+
+
 A Trello-style kanban board prototype built with FastAPI + vanilla JavaScript.
 
 Run locally:
