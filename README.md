@@ -2,6 +2,14 @@
 
 <img width="1915" height="994" alt="Screenshot 2026-02-07 121653" src="https://github.com/user-attachments/assets/7df46428-61df-47a6-b9a3-f42e1c28602d" />
 
+<img width="885" height="464" alt="Screenshot 2026-02-07 121902" src="https://github.com/user-attachments/assets/595e83ea-6ead-41d0-9167-9da388dce4ee" />
+
+<img width="1026" height="1006" alt="Screenshot 2026-02-07 121918" src="https://github.com/user-attachments/assets/63f44694-13c6-4e8f-b06d-35b244d8fb19" />
+
+<img width="929" height="984" alt="Screenshot 2026-02-07 121943" src="https://github.com/user-attachments/assets/536bb32b-02de-4902-acde-aa283a8ecbb2" />
+
+<img width="1020" height="1024" alt="Screenshot 2026-02-07 122005" src="https://github.com/user-attachments/assets/7e401e9e-5119-4daa-9636-eed6232a4fb6" />
+
 
 A Trello-style kanban board prototype built with FastAPI + vanilla JavaScript.
 
