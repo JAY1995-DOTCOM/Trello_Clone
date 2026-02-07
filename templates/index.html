@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Trello Clone – Rapid Prototype</title>
+
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ================= TOP BAR ================= -->
+
+  <header class="topbar">
+    <h1>Trello Prototype</h1>
+  </header>
+
+  <!-- ================= BOARD ================= -->
+
+  <main class="board">
+
+    <!-- ================= TODO ================= -->
+
+    <div class="column" data-column="todo" id="todo">
+      <h2>To Do</h2>
+
+      <div class="cards">
+        <div class="card" draggable="true" data-id="1">Set up FastAPI</div>
+        <div class="card" draggable="true" data-id="2">Build UI skeleton</div>
+      </div>
+
+      <form class="add-card-form">
+        <input
+          type="text"
+          placeholder="+ Add card…"
+          aria-label="Add card to To Do"
+        />
+      </form>
+    </div>
+
+    <!-- ================= PROGRESS ================= -->
+
+    <div class="column" data-column="progress" id="progress">
+      <h2>In Progress</h2>
+
+      <div class="cards">
+        <div class="card" draggable="true" data-id="3">Drag system</div>
+      </div>
+
+      <form class="add-card-form">
+        <input
+          type="text"
+          placeholder="+ Add card…"
+          aria-label="Add card to In Progress"
+        />
+      </form>
+    </div>
+
+    <!-- ================= DONE ================= -->
+
+    <div class="column" data-column="done" id="done">
+      <h2>Done</h2>
+
+      <div class="cards">
+        <div class="card" draggable="true" data-id="4">Project scaffold</div>
+      </div>
+
+      <form class="add-card-form">
+        <input
+          type="text"
+          placeholder="+ Add card…"
+          aria-label="Add card to Done"
+        />
+      </form>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  background: #f4f5f7;
+}
+
+/* ---------------- TOP BAR ---------------- */
+
+.topbar {
+  background: #026aa7;
+  color: white;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* ---------------- BOARD ---------------- */
+
+.board {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+/* ---------------- COLUMN ---------------- */
+
+.column {
+  background: #ebecf0;
+  width: 280px;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.column h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+/* ---------------- CARD ---------------- */
+
+.card {
+  background: white;
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  cursor: grab;
+  transition: 
+    background 0.15s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.card:hover {
+  background: #fdfefe;
+  box-shadow: 0 3px 6px rgba(0,0,0,.18);
+  transform: translateY(-1px);
+}
+
+/* ---------------- DRAG STATES ---------------- */
+
+.card.dragging {
+  opacity: 0.6;
+  transform: rotate(2deg);
+  cursor: grabbing;
+}
+
+.column.drag-over {
+  background: #dde1e7;
+}
+
+/* ---------------- SCROLLBAR POLISH ---------------- */
+
+.column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.column::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.column::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------------- DROP TARGET FEEDBACK ---------------- */
+
+.column.drag-over {
+  background: #dfe3ea;
+  outline: 2px dashed #026aa7;
+}
+
+/* ---------------- PLACEHOLDER GAP ---------------- */
+
+.card-placeholder {
+  height: 44px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: rgba(9, 30, 66, 0.08);
+}
+
+/* ---------------- ACTIVE GRAB CURSOR ---------------- */
+
+.card:active {
+  cursor: grabbing;
+}
+
+/* ---------------- DRAG SHADOW BOOST ---------------- */
+
+.card.dragging {
+  opacity: 0.75;
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+}
+
+/* ---------------- BOARD SNAP POLISH ---------------- */
+
+.board {
+  scroll-snap-type: x mandatory;
+}
+
+.column {
+  scroll-snap-align: start;
+}
+
+/* ================= EMPTY COLUMN DROP HINT ================= */
+
+.column:empty::after {
+  content: "Drop cards here";
+  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* ================= SAVE FLASH FEEDBACK ================= */
+
+.column.saved {
+  animation: savedFlash 0.35s ease;
+}
+
+@keyframes savedFlash {
+  from {
+    box-shadow: 0 0 0 3px rgba(2,106,167,0.35);
+  }
+  to {
+    box-shadow: none;
+  }
+}
+
+/* ================= ADD CARD FORM (NEXT STEP) ================= */
+
+.add-card-form {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.add-card-form input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 2px dashed transparent;
+  background: rgba(255,255,255,0.75);
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-card-form input:hover {
+  background: white;
+  border-color: rgba(0,0,0,0.12);
+}
+
+.add-card-form input:focus {
+  background: white;
+  border-color: #026aa7;
+}
